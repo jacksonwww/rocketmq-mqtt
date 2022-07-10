@@ -263,10 +263,12 @@ public class QueueCache {
     }
 
     private void collectorPullCacheStatus(String pullCacheStatus) {
-        try {
-            MqttMetricsCollector.collectPullCacheStatusTps(1, pullCacheStatus);
-        } catch (Throwable e) {
-            logger.error("", e);
+        if (connectConf.isEnablePrometheus()) {
+            try {
+                MqttMetricsCollector.collectPullCacheStatusTps(1, pullCacheStatus);
+            } catch (Throwable e) {
+                logger.error("", e);
+            }
         }
     }
 
