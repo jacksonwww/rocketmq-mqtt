@@ -212,11 +212,11 @@ public class LmqQueueStoreManager implements LmqQueueStore {
     }
 
     private void collectLmqReadWriteMatchActionRt(String action, long rt, boolean status) {
-        try {
-            MqttMetricsCollector.collectLmqReadWriteMatchActionRt(rt, action, String.valueOf(status));
-        } catch (PrometheusException e) {
-            logger.error("", e);
-        }
+//        try {
+//            MqttMetricsCollector.collectLmqReadWriteMatchActionRt(rt, action, String.valueOf(status));
+//        } catch (PrometheusException e) {
+//            logger.error("", e);
+//        }
     }
 
     @Override
@@ -234,11 +234,11 @@ public class LmqQueueStoreManager implements LmqQueueStore {
                     StatUtil.addInvoke("lmqPull", rt);
                     collectLmqReadWriteMatchActionRt("lmqPull", rt, true);
                     StatUtil.addPv(pullResult.getPullStatus().name(), 1);
-                    try {
-                        MqttMetricsCollector.collectPullStatusTps(1, pullResult.getPullStatus().name());
-                    } catch (Throwable e) {
-                        logger.error("collect prometheus error", e);
-                    }
+//                    try {
+//                        MqttMetricsCollector.collectPullStatusTps(1, pullResult.getPullStatus().name());
+//                    } catch (Throwable e) {
+//                        logger.error("collect prometheus error", e);
+//                    }
                 }
 
                 @Override

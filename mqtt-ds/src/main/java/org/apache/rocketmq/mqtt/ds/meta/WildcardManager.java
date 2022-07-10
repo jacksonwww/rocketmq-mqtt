@@ -124,11 +124,11 @@ public class WildcardManager {
     }
 
     private void collectMatchActionMetrics(long rt) {
-        try {
-            MqttMetricsCollector.collectLmqReadWriteMatchActionRt(rt, "MatchWildcards", "unknown");
-        } catch (PrometheusException e) {
-            logger.error("collect MatchWildcards metrics error", e);
-        }
+//        try {
+//            MqttMetricsCollector.collectLmqReadWriteMatchActionRt(rt, "MatchWildcards", "unknown");
+//        } catch (PrometheusException e) {
+//            logger.error("collect MatchWildcards metrics error", e);
+//        }
     }
 
 }
