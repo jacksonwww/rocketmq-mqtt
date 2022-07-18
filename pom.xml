@@ -24,7 +24,7 @@
         <java.target.version>1.8</java.target.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring.version>4.3.16.RELEASE</spring.version>
-        <rocket.version>4.9.3</rocket.version>
+        <rocket.version>4.9.4</rocket.version>
         <prometheus.version>0.12.0</prometheus.version>
     </properties>
 
